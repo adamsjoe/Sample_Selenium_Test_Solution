@@ -1,0 +1,33 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1614887308532' stop='1614887309571'>
+    <name>Scenario One Test</name>
+    <title>Scenario One Test</title>
+    <test-cases>
+        <test-case start='1614887308532' status='broken' stop='1614887309570'>
+            <name>should allo2 form elements to be filled in</name>
+            <title>should allo2 form elements to be filled in</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='firefox-86.0'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Parameter for "url" command needs to be type of string</message>
+                <stack-trace>Error: Parameter for "url" command needs to be type of string
+                    at Browser.url (C:\code\mdslTest\node_modules\webdriverio\build\commands\browser\url.js:40:15)
+                    at Browser.runCommandWithHooks (C:\code\mdslTest\node_modules\@wdio\sync\build\wrapCommand.js:105:34)
+                    at Browser.runCommandWithHooks (C:\code\mdslTest\node_modules\@wdio\sync\build\wrapCommand.js:100:24)
+                    at Browser.wrapCommandFn (C:\code\mdslTest\node_modules\@wdio\sync\build\wrapCommand.js:67:44)
+                    at Object.goToURL (C:\code\mdslTest\functions\helpers.js:22:13)
+                    at Context.&lt;anonymous> (C:\code\mdslTest\test\question1\q1.js:10:16)
+                    at Context.executeSync (C:\code\mdslTest\node_modules\@wdio\sync\build\index.js:38:22)
+                    at C:\code\mdslTest\node_modules\@wdio\sync\build\index.js:69:68</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

@@ -1,0 +1,43 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1614889204509' stop='1614889208879'>
+    <name>Scenario One Test</name>
+    <title>Scenario One Test</title>
+    <test-cases>
+        <test-case start='1614889204509' status='passed' stop='1614889207698'>
+            <name>should return the page title</name>
+            <title>should return the page title</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='firefox-86.0'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1614889207698' status='broken' stop='1614889208878'>
+            <name>should allow form elements to be filled in</name>
+            <title>should allow form elements to be filled in</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='firefox-86.0'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>navElements is not defined</message>
+                <stack-trace>ReferenceError: navElements is not defined
+                    at Object.verifyText (C:\code\mdslTest\functions\helpers.js:66:31)
+                    at Context.&lt;anonymous> (C:\code\mdslTest\test\question1\q1.js:35:16)
+                    at Context.executeSync (C:\code\mdslTest\node_modules\@wdio\sync\build\index.js:38:22)
+                    at C:\code\mdslTest\node_modules\@wdio\sync\build\index.js:69:68</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
