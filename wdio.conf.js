@@ -1,11 +1,4 @@
-// var zal = require('./functions/zalenium.js');
-
-// var logout = require('./functions/logout.js');
-// var bypass = require('./functions/bypass.js');
 var helper = require('./functions/helpers.js');
-// var login = require('./layout/loginPage.js');
-// var nav = require('./layout/navElements.js');
-// var loginPOM = require('./layout/loginPage.js');
 
 exports.config = {
   //
@@ -26,10 +19,14 @@ exports.config = {
   // directory is where your package.json resides, so `wdio` will be called from there.
   //
   specs: [
+    './test/question1/q1.js',
     './test/question2/q2.js',
+    './test/question3/q3.js',
   ],
   suites: {
-    accountPage: ['./test/accountPage/accountScreen.js'],
+    question1: ['./test/question1/q1.js'],
+    question2: ['./test/question2/q2.js'],
+    question3: ['./test/question3/q3.js'],
     
   },
   // Patterns to exclude.
@@ -104,8 +101,7 @@ exports.config = {
   beforeSession: function (config, capabilities, specs) {
     //let testFileName = /[^/]*$/.exec(specs)[0];
     let brow = capabilities.browserName;
-
-    //capabilities['zal:name'] = testFileName + ' - ' + brow;
+    
   },
 
   beforeTest: function (test, context) {
@@ -113,10 +109,6 @@ exports.config = {
     // browser.maximizeWindow();
     browser.setWindowSize(1920, 1080);
     browser.pause(1000);
-
-    // const heading = $('h1');
-    // heading.waitForExist(240000);
-
   },
 
   afterTest: function (test, context, { error, result, duration, passed, retries }) {
@@ -126,21 +118,7 @@ exports.config = {
   },
 
   after: function (test, capabilities, specs) {
-    // let state = '';
-
-    // if (test == 1) {
-    //   // there has been an error
-    //   state = 'false';
-    // } else if (test == 0) {
-    //   // there was no problem
-    //   state = 'true';
-    // } else {
-    //   // something odd has happened.  Force the test to a 'failed' state
-    //   state = 'false';
-    // }
-
-    // set the status flag
-    //zal.setZaleniumResult(state);
+    
   },
 
 };

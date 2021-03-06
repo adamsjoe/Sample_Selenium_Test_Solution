@@ -36,10 +36,10 @@ describe('Scenario Two Test', function() {
         let numbers = resultsString.match(/\d+/g).map(Number);
         
         // get the total salary from the table
-        let totalSalary = ts.getAllAges(q2Layout.table);
+        let totalAge = ts.getAllAges(q2Layout.table);
 
         // get the average
-        let averageAge = totalSalary / numbers[2]; // numbers[2] contains the number in the "of x entries" in the string
+        let averageAge = totalAge / numbers[2]; // numbers[2] contains the number in the "of x entries" in the string
 
         helper.verifyValue(expectedAverageAge, averageAge);        
         
