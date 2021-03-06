@@ -21,9 +21,13 @@ Finally, add the following b/n the braces:
 install all pre-reqs with **npm install** from the root
 
 Open one terminal and run **node_modules\\.bin\\webdriver-manager update**
+
 Once the update has completed, then run **node_modules\\.bin\\webdriver-manager start** 
 **ensure that you see 'INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444' in the terminal**
+
 Now open a new terminal and then run **npx wdio wdio.conf.js**
+
+(as a side note, my way of working is shown in the image - for reference)
 
 To run a suite (defined in the wdio.config.js file)
 **npx wdio wdio.conf.js --suite <suiteName>**
