@@ -18,6 +18,7 @@
     "@wdio/mocha-framework": "^7.0.7",
     "@wdio/selenium-standalone-service": "^7.0.7",
     "@wdio/sync": "^7.0.9",
+    "allure-commandline": "^2.13.8",
     "chromedriver": "^88.0.0",
     "wdio-chromedriver-service": "^7.0.0"
   }
