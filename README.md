@@ -3,7 +3,9 @@
 ## Installation instructions
 Needs:
 Java JDK (correctly setup with JAVA_HOME configured and added to the path as %JAVA_HOME%\bin)
+
 nodejs (https://nodejs.org/en/)
+
 VSCode (Not required, but recomended due to multiple command prompts needed)
 
 There has been a security update (on windows) which is preventing scripts running - if using visual studio code, then follow the instructions below to avoid getting any errors:
