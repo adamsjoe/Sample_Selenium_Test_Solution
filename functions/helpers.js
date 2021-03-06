@@ -63,6 +63,25 @@ module.exports = {
     return element.isSelected();
   },
 
+  /**
+   * @function
+   * @param {string} locator
+   * @return {string} text from the element
+   * @summary Returns the text from the specified element
+   */
+     getText: function (locator) {
+  
+      let message = 'Getting the text of the element with tag ' + locator;
+ 
+      const locatorString = $(locator);
+  
+      var returnText = locatorString.getText();
+  
+      console.log(returnText);
+  
+      return returnText;
+    },
+
   ///////////////////////////////////////////
   //
   // page validations
@@ -108,6 +127,17 @@ module.exports = {
     );
   },  
 
+  /**
+   * @function
+   * @param {string} expected
+   * @param {string} actual
+   * @summary Default asserting of values.
+   */
+
+     verifyValue: function (expected, actual) {
+      assert(expected === actual, 'Expected "' + expected + '" but got "' + actual + '".  The test has failed.');
+    },
+  
 
   ///////////////////////////////////////////
   //

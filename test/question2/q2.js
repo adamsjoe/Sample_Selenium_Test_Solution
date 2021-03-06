@@ -7,6 +7,8 @@ var ts = require('../../functions/tableStuff');
 const page = 'table-sort-search-demo.html';
 describe('Scenario Two Test', function() {
     it('should return the average age of all San Fanciso based employees', function() {
+        let expectedAverageAge = 46;
+
         // grab the baseUrl from the browser oject
         let base = helper.getBaseUrl();
 
@@ -22,13 +24,24 @@ describe('Scenario Two Test', function() {
         helper.enterText(q2Layout.search, 'San Francisco');
         browser.pause(1000);
 
-        // 
+        // check the table is present
         helper.verifyElementPresent(q2Layout.table);
 
-        ts.stuff(q2Layout.table);
+        // to make this test robust (or the first steps of this) we should get the number of results that San Fran will give,
+        // this will allow us to work out the average.
+        let resultsString = helper.getText(q2Layout.results);
 
-        // console.log("No of rows : "+webTable.getRowCount())
-        browser.pause(10000);
+        // results string now has "x to y of y entries (filtered from z total entries)
+        // we shall use this regex to extract the numbers and then use the second array element to work out the average
+        let numbers = resultsString.match(/\d+/g).map(Number);
+        
+        // get the total salary from the table
+        let totalSalary = ts.getAllAges(q2Layout.table);
+
+        // get the average
+        let averageAge = totalSalary / numbers[2]; // numbers[2] contains the number in the "of x entries" in the string
+
+        helper.verifyValue(expectedAverageAge, averageAge);        
         
     });
       
