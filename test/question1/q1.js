@@ -7,6 +7,10 @@ var rand = require('../../functions/randomGenerator.js');
 
 describe('Scenario One Test', function() {
     it('should return the page title', function() {
+        let expectedPageTitle = 'Selenium Easy - Input Form Demo with Validations';
+
+        helper.setupReport('Scenario One', 'medium', 'Page Title should be correct');
+
         // grab the baseUrl from the browser oject
         let base = helper.getBaseUrl();
 
@@ -14,11 +18,13 @@ describe('Scenario One Test', function() {
         helper.goToURL(base + 'input-form-demo.html');
 
         // check page title - basic check to make sure that we are on the correct page
-        helper.verifyPageTitle("Selenium Easy - Input Form Demo with Validations");
+        helper.verifyPageTitle(expectedPageTitle);
         
     });
 
     it('should have the elements present on page', function() {
+        helper.setupReport('Scenario One', 'medium', 'Verify elements are present on the page');
+
         // grab the baseUrl from the browser oject
         let base = helper.getBaseUrl();
 
@@ -42,6 +48,7 @@ describe('Scenario One Test', function() {
     });
 
     it('should allow a single form element to be filled in', function() {
+        helper.setupReport('Scenario One', 'medium', 'Fill in a single form element');
         let base = helper.getBaseUrl();
         
         // navigate to the page
@@ -66,6 +73,7 @@ describe('Scenario One Test', function() {
 
     // This test is almost a duplicate of the one above, but only used to donstrate adding text to multiple elements
     it('should allow a multipe form elements to be filled in', function() {
+        helper.setupReport('Scenario One', 'medium', 'Fill in multipe form elements');
         let base = helper.getBaseUrl();
         
         // navigate to the page
@@ -106,6 +114,7 @@ describe('Scenario One Test', function() {
     });   
     
     it('should allow a radio button to be selected', function() {
+        helper.setupReport('Scenario One', 'medium', 'Allow radio buttons to be selectable');
         // grab the baseUrl from the browser oject
         let base = helper.getBaseUrl();
 
@@ -121,6 +130,7 @@ describe('Scenario One Test', function() {
     });    
 
     it('should allow a value to be selected from the dropdown', function() {
+        helper.setupReport('Scenario One', 'medium', 'Allow Drop Down (Select) items to be selectable');
         // grab the baseUrl from the browser oject
         let base = helper.getBaseUrl();
 

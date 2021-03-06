@@ -7,6 +7,7 @@ var ts = require('../../functions/tableStuff');
 const page = 'table-sort-search-demo.html';
 describe('Scenario Two Test', function() {
     it('should return the highest salary in the company is "$206850/y"', function() {
+        helper.setupReport('Scenario Three', 'blocker', 'Verify the highest salary in the org');
         
         // the table contains the salary as $206,850/y - I will strip the all non numerics in the test to make the sorting easier
         let expectedHighestSalary = 206850;

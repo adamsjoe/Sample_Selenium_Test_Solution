@@ -5,8 +5,9 @@ var q2Layout = require('../../layout/question2/tableSortPage');
 var ts = require('../../functions/tableStuff');
 
 const page = 'table-sort-search-demo.html';
-describe('Scenario Two Test', function() {
+describe('Scenario Three Test', function() {
     it('should return the average age of all San Fanciso based employees', function() {
+        helper.setupReport('Scenario Two', 'critical', 'Verify the average age of all San Francisco based employees');
         let expectedAverageAge = 46;
 
         // grab the baseUrl from the browser oject
