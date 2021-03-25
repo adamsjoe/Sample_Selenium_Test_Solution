@@ -1,5 +1,3 @@
-# Calero-MDSL Excercise
-
 ## Installation instructions
 Needs:
 Java JDK (correctly setup with JAVA_HOME configured and added to the path as %JAVA_HOME%\bin)
