@@ -1,4 +1,4 @@
-var helper = require('./functions/helpers.js');
+var helper = require("./functions/helpers.js");
 
 exports.config = {
   //
@@ -8,7 +8,7 @@ exports.config = {
   //
   // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
   // on a remote machine).
-  runner: 'local',
+  runner: "local",
   //
   // ==================
   // Specify Test Files
@@ -19,15 +19,14 @@ exports.config = {
   // directory is where your package.json resides, so `wdio` will be called from there.
   //
   specs: [
-    './test/question1/q1.js',
-    './test/question2/q2.js',
-    './test/question3/q3.js',
+    "./test/question1/q1.js",
+    "./test/question2/q2.js",
+    "./test/question3/q3.js",
   ],
   suites: {
-    question1: ['./test/question1/q1.js'],
-    question2: ['./test/question2/q2.js'],
-    question3: ['./test/question3/q3.js'],
-    
+    question1: ["./test/question1/q1.js"],
+    question2: ["./test/question2/q2.js"],
+    question3: ["./test/question3/q3.js"],
   },
   // Patterns to exclude.
   exclude: [
@@ -41,17 +40,18 @@ exports.config = {
   maxInstances: 1,
 
   capabilities: [
-    {      
-      browserName: 'firefox',
+    {
+      browserName: "firefox",
+      acceptInsecureCerts: true,
       // "moz:firefoxOptions": {
-      //   // flag to activate Firefox headless mode 
+      //   // flag to activate Firefox headless mode
       //   args: ['-headless']
-      // },      
+      // },
     },
     // {
     //   browserName: 'chrome',
     // //  'goog:chromeOptions': {
-    // //    // flag to activate Chrome headless mode 
+    // //    // flag to activate Chrome headless mode
     // //    args: ['--headless', '--disable-gpu'],
     // //  },
     // //   acceptInsecureCerts: true,
@@ -59,11 +59,11 @@ exports.config = {
   ],
 
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: 'silent',
+  logLevel: "silent",
 
   bail: 0,
 
-  baseUrl: 'https://www.seleniumeasy.com/test/',
+  baseUrl: "https://www.seleniumeasy.com/test/",
   // Default timeout for all waitFor* commands.
   waitforTimeout: 240000,
   // Default timeout in milliseconds for request
@@ -74,20 +74,20 @@ exports.config = {
 
   services: [
     [
-      'selenium-standalone',
+      "selenium-standalone",
       {
-        logPath: 'logs'
+        logPath: "logs",
       },
     ],
   ],
 
-  framework: 'mocha',
+  framework: "mocha",
 
   reporters: [
     [
-      'allure',
+      "allure",
       {
-        outputDir: 'allure-results',
+        outputDir: "allure-results",
         disableWebdriverStepsReporting: true,
         disableWebdriverScreenshotsReporting: true,
       },
@@ -95,30 +95,27 @@ exports.config = {
   ],
 
   mochaOpts: {
-    ui: 'bdd',
+    ui: "bdd",
     timeout: 240000,
   },
   beforeSession: function (config, capabilities, specs) {
     //let testFileName = /[^/]*$/.exec(specs)[0];
     let brow = capabilities.browserName;
-    
   },
 
   beforeTest: function (test, context) {
-
     // browser.maximizeWindow();
     browser.setWindowSize(1920, 1080);
     browser.pause(1000);
   },
 
-  afterTest: function (test, context, { error, result, duration, passed, retries }) {
-
+  afterTest: function (
+    test,
+    context,
+    { error, result, duration, passed, retries }
+  ) {
     // helper.addReportMessage('NOW RUNNING AFTERTEST FUNCTIONS');
-
   },
 
-  after: function (test, capabilities, specs) {
-    
-  },
-
+  after: function (test, capabilities, specs) {},
 };

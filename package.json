@@ -1,7 +1,7 @@
 {
   "name": "mdsl-test",
   "version": "1.0.0",
-  "description": "Solution for test",
+  "description": "Solution for Sample Selenium test",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

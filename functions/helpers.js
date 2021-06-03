@@ -1,15 +1,15 @@
-'use strict';
+"use strict";
 /**
  * @module functions/helpers
  * @desc Contains helper methods for interacting with pages
  */
 
-var assert = require('assert');
-const { addDescription } = require('@wdio/allure-reporter').default;
-const { addStep } = require('@wdio/allure-reporter').default;
-const { addFeature } = require('@wdio/allure-reporter').default;
-const { addSeverity } = require('@wdio/allure-reporter').default;
-const { addAttachment } = require('@wdio/allure-reporter').default;
+var assert = require("assert");
+const { addDescription } = require("@wdio/allure-reporter").default;
+const { addStep } = require("@wdio/allure-reporter").default;
+const { addFeature } = require("@wdio/allure-reporter").default;
+const { addSeverity } = require("@wdio/allure-reporter").default;
+const { addAttachment } = require("@wdio/allure-reporter").default;
 
 module.exports = {
   /**
@@ -19,13 +19,13 @@ module.exports = {
    * @param {string} desc
    * @summary Needed to setup the Allure report
    */
-   setupReport: function (feature, severity, desc) {
+  setupReport: function (feature, severity, desc) {
     addFeature(feature);
     addSeverity(severity);
     addDescription(desc);
     addStep('Navigating to "' + browser.options.baseUrl + '"');
   },
-  
+
   /**
    * @function
    * @return {string} baseUrl (config file stores this in browser object)
@@ -41,14 +41,13 @@ module.exports = {
    * @summary Go to the specified URL
    */
   goToURL: function (url) {
-
     let message = 'Navigating to "' + url + '"';
     addStep(message);
 
     browser.url(url);
-  },    
+  },
 
-  getPageTitle: function() {
+  getPageTitle: function () {
     return browser.getTitle();
   },
 
@@ -59,18 +58,17 @@ module.exports = {
    * @summary Returns the text from the specified element
    */
   getText: function (locator) {
-
-    let message = 'Getting the text of the element with tag ' + locator;
+    let message = "Getting the text of the element with tag " + locator;
     addStep(message);
 
     const locatorString = $(locator);
 
     var returnText = locatorString.getText();
- 
+
     return returnText;
   },
 
-   /**
+  /**
    * @function
    * @param {string} locator element to get state of
    * @returns {boolean} true if checked, false if not
@@ -92,20 +90,19 @@ module.exports = {
    * @return {string} text from the element
    * @summary Returns the text from the specified element
    */
-     getText: function (locator) {
-  
-      let message = 'Getting the text of the element with tag ' + locator;
-      
-      addStep(message);
-      
-      const locatorString = $(locator);
-  
-      var returnText = locatorString.getText();
-  
-      console.log(returnText);
-  
-      return returnText;
-    },
+  getText: function (locator) {
+    let message = "Getting the text of the element with tag " + locator;
+
+    addStep(message);
+
+    const locatorString = $(locator);
+
+    var returnText = locatorString.getText();
+
+    console.log(returnText);
+
+    return returnText;
+  },
 
   ///////////////////////////////////////////
   //
@@ -119,28 +116,38 @@ module.exports = {
    * @summary Verify that an element is present
    */
   verifyElementPresent: function (locator) {
-    let message = 'Verifing the element identified with "' + locator + '" can be found.';  
+    let message =
+      'Verifing the element identified with "' + locator + '" can be found.';
 
     addStep(message);
 
     const el = $(locator);
 
-    assert(el.isExisting, 'Cannot find the element identified with "' + locator);
+    assert(
+      el.isExisting,
+      'Cannot find the element identified with "' + locator
+    );
   },
 
   /**
    * @function
    * @param {string} expectedTitle
    * @summary Verify that the page title matches the parameter passed in
-   */  
-  verifyPageTitle: function(expectedTitle) {
+   */
+  verifyPageTitle: function (expectedTitle) {
+    let message =
+      'Verifying that the page title matches "' + expectedTitle + '".';
 
-    let message = 'Verifying that the page title matches "' + expectedTitle + '".'
-    
     addStep(message);
 
-    assert(expectedTitle === browser.getTitle(), "Expected '"+ expectedTitle + "' but got '" + browser.getTitle() + "' for page title.")
-
+    assert(
+      expectedTitle === browser.getTitle(),
+      "Expected '" +
+        expectedTitle +
+        "' but got '" +
+        browser.getTitle() +
+        "' for page title."
+    );
   },
 
   /**
@@ -149,8 +156,9 @@ module.exports = {
    * @param {string} expectedText
    * @summary Verifies text at the locator with a "known" string
    */
-  verifyTextFromInput: function (locator, expectedText) {    
-    let message = 'Verifying the text at "' + locator + '" is "' + expectedText + '"';
+  verifyTextFromInput: function (locator, expectedText) {
+    let message =
+      'Verifying the text at "' + locator + '" is "' + expectedText + '"';
 
     addStep(message);
 
@@ -161,9 +169,13 @@ module.exports = {
 
     assert(
       expectedText == actualText,
-      'Expected "' + expectedText + '" but got "' + actualText + '".  The test has failed.',
+      'Expected "' +
+        expectedText +
+        '" but got "' +
+        actualText +
+        '".  The test has failed.'
     );
-  },  
+  },
 
   /**
    * @function
@@ -172,14 +184,24 @@ module.exports = {
    * @summary Default asserting of values.
    */
   verifyValue: function (expected, actual) {
-
-    let message = 'Checking that values match';
+    let message =
+      'Checking that values match.  Expected: "' +
+      expected +
+      '" Actual: "' +
+      actual +
+      '"';
 
     addStep(message);
 
-    assert(expected === actual, 'Expected "' + expected + '" but got "' + actual + '".  The test has failed.');
+    assert(
+      expected === actual,
+      'Expected "' +
+        expected +
+        '" but got "' +
+        actual +
+        '".  The test has failed.'
+    );
   },
-  
 
   ///////////////////////////////////////////
   //
@@ -187,12 +209,11 @@ module.exports = {
   //
   ///////////////////////////////////////////
 
-
   /**
    * @function
    * @param {element} locator
    * @summary Performs a click action on the element identified by locator
-   */  
+   */
   clickElement: function (locator) {
     let message = 'Clicking element referenced as "' + locator + '"';
 
@@ -208,9 +229,10 @@ module.exports = {
    * @param {string} locator
    * @param {string} text
    * @summary Enters the text at the specified text in the locator
-   */  
+   */
   enterText: function (locator, text) {
-    let message = 'Entering "' + text + '" into the field referenced as "' + locator + '"';
+    let message =
+      'Entering "' + text + '" into the field referenced as "' + locator + '"';
 
     addStep(message);
 
@@ -225,13 +247,18 @@ module.exports = {
    * @param {string} locator
    * @param {string} value
    * @summary Selects the element in a dropdown using the value (text)
-   */    
-  selectDropDownByValue: function(locator, value) {
-    let message = 'Selecting the "' + value + '" from the element refereced as "' + locator + '"';
+   */
+  selectDropDownByValue: function (locator, value) {
+    let message =
+      'Selecting the "' +
+      value +
+      '" from the element refereced as "' +
+      locator +
+      '"';
 
     addStep(message);
 
     const locatorString = $(locator);
     locatorString.selectByVisibleText(value);
-  }
-}
+  },
+};
