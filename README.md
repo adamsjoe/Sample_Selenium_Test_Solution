@@ -1,29 +1,39 @@
 # Sample WebDriver Automation Solution.
 
+This test demonstrates the use of WebdriverIO in normal business situations.
+
+This repo contains all the test code as well as setup instructions for the tools and for the code.
+
+## Background
+
 Within the QuestionPaper directory there is a PDF which contains 3 questions to answer using an automation solution.
 
 I have chosen in this repository to attempt this using WebDriverIO and a custom Page Object Model architecture.
 
 The full questions are containined within the PDF in the QuestionPaper directory, but they are:
 
-## Scenario 1: Write an end-to-end test to fill in and submit a form
+### Scenario 1: Write an end-to-end test to fill in and submit a form
 
 The form can be found here https://www.seleniumeasy.com/test/input-form-demo.html
 
 1. Please fill in all the fields in the form and submit it
 2. You can choose what data to enter into the form
 
-## Scenario Two
+This question is quite easy due to the presence of "name" attributes on the elements.
+
+### Scenario Two
 
 Write a test that does the following
 
 1. Navigate to https://www.seleniumeasy.com/test/table-sort-search-demo.html
 2. Search for all users in San Francisco
 3. Read the age of all the employees in the grid
-4. Verify that the average age of all the employees in that office is 46
+4. Verify that the average age of all the employees in that office is "46"
    1. If, when you come to write your test, the average age of all employees is not 46, that’s fine, just make sure that the test fails.
 
-## Scenario Three
+This test is slightly more difficult as the table cells do not contain any easily targetable attributes.
+
+### Scenario Three
 
 Write a test that does the following
 
@@ -31,7 +41,9 @@ Write a test that does the following
 2. Read the salaries of all the software engineers at the company
 3. Verify that the highest salary for a software engineer is $206,850/y
 
-## Installation instructions
+This test is slightly more difficult as the table cells do not contain any easily targetable attributes.
+
+### Installation instructions
 
 Needs:
 Java JDK (correctly setup with JAVA_HOME configured and added to the path as %JAVA_HOME%\bin)
@@ -49,7 +61,7 @@ After that, by looking your operating system enter "edit in settings.json". (whi
 Finally, add the following b/n the braces:
 `"terminal.integrated.shellArgs.windows": ["-ExecutionPolicy", "Bypass"]`
 
-### To run
+## To run
 
 install all pre-reqs with **npm install** from the root
 
@@ -71,7 +83,7 @@ To run a suite (defined in the wdio.config.js file)
 
 The resulting files will appear in the "jsdoc" folder
 
-## To generate a report
+### To generate a report
 
 **node_modules\\.bin\\allure generate --clean**
 This will generate the report into allure-report
@@ -88,7 +100,11 @@ In the folder "sample-allure-report" there is an output from the allure report.
 
 These have been generated and are present in the jsdoc folder.
 
-## Final Thought
+### Jenkins
+
+There is a sample jenkins pipeline in the "pipeline" folder. This pipeline would need tweaked depending on the host OS where Jenkins was running. It will checkout the code, run the tests and create the report (There are additional requirements for allure to be installed on the Jenkins box.)
+
+### Final Thoughts
 
 There are a number of things I would improve if this were production. Firstly, I would like proper identifiers added to the search box on the table page. While I have been able to interact with this, it's not a particularly good way of doing it.
 

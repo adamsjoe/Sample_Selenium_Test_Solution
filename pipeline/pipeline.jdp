@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+    stages {        
+        stage('Checkout code') {
+            steps {
+                git 'https://github.com/adamsjoe/Sample_Selenium_Test_Solution.git'
+            }
+        }
+        stage('Node Pacakage Manager Install') {
+            agent any
+            steps {
+                sh 'npm install'
+            }
+        }        
+        
+        stage('Running Tests') {
+            agent any
+            steps {
+                sh 'npx wdio wdio.conf.js' 
+            }
+        }
+        
+    }
+    post {
+        always {
+            allure([
+                includeProperties: false,
+                jdk: '',
+                properties: [],
+                reportBuildPolicy: 'ALWAYS',
+                results: [[path: 'cypress/allure-results']]
+            ])                
+        }
+    }    
+}
