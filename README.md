@@ -94,8 +94,8 @@ Clean out allure-results if you want a clean report (with nothing from previous 
 
 ### Sample Report
 
-In the folder "sample-allure-report" there is an output from the allure report.
-
+In the folder "sample-allure-report" there is an output from the allure report.  *NOTE* that due to security, if you view the report you will likely just see "loading" on the screen.  To avoid this, using chrome, open a command prompt (windows only) and enter `start chrome --allow-file-access-from-files` and then drag in the index file.  When this is served via a webserver (or Jenkins) this is not required.
+   
 ### JSDocs
 
 These have been generated and are present in the jsdoc folder.
@@ -103,7 +103,7 @@ These have been generated and are present in the jsdoc folder.
 ### Jenkins
 
 There is a sample jenkins pipeline in the "pipeline" folder. This pipeline would need tweaked depending on the host OS where Jenkins was running. It will checkout the code, run the tests and create the report (There are additional requirements for allure to be installed on the Jenkins box.)
-
+  
 ### Final Thoughts
 
 There are a number of things I would improve if this were production. Firstly, I would like proper identifiers added to the search box on the table page. While I have been able to interact with this, it's not a particularly good way of doing it.
