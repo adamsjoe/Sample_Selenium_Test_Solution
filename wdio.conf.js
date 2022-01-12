@@ -40,22 +40,22 @@ exports.config = {
   maxInstances: 1,
 
   capabilities: [
-    {
-      browserName: "firefox",
-      acceptInsecureCerts: true,
-      // "moz:firefoxOptions": {
-      //   // flag to activate Firefox headless mode
-      //   args: ['-headless']
-      // },
-    },
     // {
-    //   browserName: 'chrome',
-    // //  'goog:chromeOptions': {
-    // //    // flag to activate Chrome headless mode
-    // //    args: ['--headless', '--disable-gpu'],
-    // //  },
-    // //   acceptInsecureCerts: true,
+    //   browserName: "firefox",
+    //   acceptInsecureCerts: true,
+    //   // "moz:firefoxOptions": {
+    //   //   // flag to activate Firefox headless mode
+    //   //   args: ['-headless']
+    //   // },
     // },
+    {
+      browserName: 'chrome',
+    //  'goog:chromeOptions': {
+    //    // flag to activate Chrome headless mode
+    //    args: ['--headless', '--disable-gpu'],
+    //  },
+    //   acceptInsecureCerts: true,
+    },
   ],
 
   // Level of logging verbosity: trace | debug | info | warn | error | silent
@@ -63,7 +63,7 @@ exports.config = {
 
   bail: 0,
 
-  baseUrl: "https://www.seleniumeasy.com/test/",
+  baseUrl: "https://demo.seleniumeasy.com/",
   // Default timeout for all waitFor* commands.
   waitforTimeout: 240000,
   // Default timeout in milliseconds for request

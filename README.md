@@ -48,7 +48,7 @@ This test is slightly more difficult as the table cells do not contain any easil
 Needs:
 Java JDK (correctly setup with JAVA_HOME configured and added to the path as %JAVA_HOME%\bin)
 
-nodejs (https://nodejs.org/en/)
+nodejs (https://nodejs.org/en/) - **NOTE** Node v14 / v12 will work, the latest node has a breaking change which I need to identify first.
 
 VSCode (Not required, but recomended due to multiple command prompts needed)
 
