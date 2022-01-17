@@ -54,6 +54,8 @@ VSCode (Not required, but recomended due to multiple command prompts needed)
 
 There has been a security update (on windows) which is preventing scripts running - if using visual studio code, then follow the instructions below to avoid getting any errors:
 
+**NOTE** This has been configured to run with the Chrome browser only.
+
 Open VS code:
 
 File -> Preferences -> Settings and in the search bar write "automation".
