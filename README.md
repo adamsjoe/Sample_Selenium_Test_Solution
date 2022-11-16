@@ -1,7 +1,5 @@
 # Sample WebDriver Automation Solution.
 
-## NOTE: The URL used in this test is no longer valid, nor will npm install run without errors due to deprecated packages.  To be updated with new versions and new URLs
-
 This test demonstrates the use of WebdriverIO in normal business situations.
 
 This repo contains all the test code as well as setup instructions for the tools and for the code.
@@ -16,7 +14,7 @@ The full questions are containined within the PDF in the QuestionPaper directory
 
 ### Scenario 1: Write an end-to-end test to fill in and submit a form
 
-The form can be found here https://www.seleniumeasy.com/test/input-form-demo.html
+The form can be found here https://demo.seleniumeasy.com/input-form-demo.html
 
 1. Please fill in all the fields in the form and submit it
 2. You can choose what data to enter into the form
@@ -27,7 +25,7 @@ This question is quite easy due to the presence of "name" attributes on the elem
 
 Write a test that does the following
 
-1. Navigate to https://www.seleniumeasy.com/test/table-sort-search-demo.html
+1. Navigate to https://demo.seleniumeasy.com/table-sort-search-demo.html
 2. Search for all users in San Francisco
 3. Read the age of all the employees in the grid
 4. Verify that the average age of all the employees in that office is "46"
@@ -39,7 +37,7 @@ This test is slightly more difficult as the table cells do not contain any easil
 
 Write a test that does the following
 
-1. Navigate to https://www.seleniumeasy.com/test/table-sort-search-demo.html
+1. Navigate to https://demo.seleniumeasy.com/table-sort-search-demo.html
 2. Read the salaries of all the software engineers at the company
 3. Verify that the highest salary for a software engineer is $206,850/y
 
