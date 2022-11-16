@@ -1,5 +1,7 @@
 # Sample WebDriver Automation Solution.
 
+## NOTE: The URL used in this test is no longer valid, nor will npm install run without errors due to deprecated packages.  To be updated with new versions and new URLs
+
 This test demonstrates the use of WebdriverIO in normal business situations.
 
 This repo contains all the test code as well as setup instructions for the tools and for the code.
